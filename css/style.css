@@ -1,0 +1,370 @@
+/* Configurações gerais */
+:root {
+    --azul: #075985;
+    --azul-escuro: #0c354a;
+    --verde: #216e42;
+    --fundo: #f3f6f9;
+    --branco: #ffffff;
+    --texto: #243746;
+    --texto-secundario: #475569;
+    --borda: #cbd5e1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--texto);
+    background-color: var(--fundo);
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.25;
+    color: var(--azul-escuro);
+}
+
+h1 {
+    margin-top: 0;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+h2 {
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+p,
+li {
+    overflow-wrap: anywhere;
+}
+
+a {
+    color: var(--azul);
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    text-decoration-thickness: 0.15em;
+}
+
+/* Destaque para navegação pelo teclado */
+:focus-visible {
+    outline: 3px solid var(--azul);
+    outline-offset: 4px;
+}
+
+/* Cabeçalho e navegação */
+body > header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem max(1rem, calc((100% - 1100px) / 2));
+    color: var(--branco);
+    background-color: var(--azul);
+}
+
+header > p {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    color: var(--branco);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    color: var(--azul-escuro);
+    background-color: var(--branco);
+}
+
+nav a:focus-visible {
+    outline-color: #facc15;
+}
+
+/* Área principal */
+main {
+    width: min(1100px, calc(100% - 2rem));
+    margin: 2rem auto;
+}
+
+main > section,
+main > article {
+    margin-bottom: 1.5rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border: 1px solid var(--borda);
+    border-radius: 0.85rem;
+    background-color: var(--branco);
+}
+
+main > section > :first-child,
+main > article > :first-child {
+    margin-top: 0;
+}
+
+main > section > :last-child,
+main > article > :last-child {
+    margin-bottom: 0;
+}
+
+/* Apresentação */
+section[aria-labelledby="apresentacao"] {
+    border-top: 5px solid var(--verde);
+}
+
+section[aria-labelledby="apresentacao"] > h2 {
+    color: var(--azul);
+}
+
+/* Imagens */
+figure {
+    margin: 1.5rem 0 0;
+}
+
+picture {
+    display: block;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.65rem;
+}
+
+figcaption {
+    margin-top: 0.6rem;
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+}
+
+/* Projetos */
+section > article {
+    margin: 1rem 0;
+    padding: 1.25rem;
+    border-left: 4px solid var(--verde);
+    border-radius: 0.4rem;
+    background-color: var(--fundo);
+}
+
+section > article h3 {
+    margin-top: 0;
+}
+
+section > article p:last-child {
+    margin-bottom: 0;
+}
+
+main > article {
+    border-top: 4px solid var(--verde);
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+li + li {
+    margin-top: 0.5rem;
+}
+
+/* Links de participação */
+section > p > a,
+article > p > a {
+    display: inline-block;
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+    color: var(--branco);
+    background-color: var(--azul);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+section > p > a:hover,
+article > p > a:hover {
+    background-color: var(--azul-escuro);
+}
+
+/* Contato */
+address {
+    font-style: normal;
+}
+
+address p {
+    margin: 0.4rem 0;
+}
+
+/* Formulário */
+form {
+    padding: clamp(1rem, 3vw, 2rem);
+    border: 1px solid var(--borda);
+    border-radius: 0.85rem;
+    background-color: var(--branco);
+}
+
+fieldset {
+    min-width: 0;
+    margin: 0 0 1.5rem;
+    padding: 1.25rem;
+    border: 1px solid var(--borda);
+    border-radius: 0.6rem;
+}
+
+legend {
+    padding: 0 0.5rem;
+    color: var(--azul-escuro);
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+fieldset > p {
+    margin: 0 0 1.1rem;
+}
+
+fieldset > p:last-child {
+    margin-bottom: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: bold;
+}
+
+input,
+select,
+button {
+    font: inherit;
+}
+
+input,
+select {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+    padding: 0.7rem;
+    border: 1px solid #64748b;
+    border-radius: 0.4rem;
+    color: var(--texto);
+    background-color: var(--branco);
+}
+
+input::placeholder {
+    color: var(--texto-secundario);
+    opacity: 1;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--azul);
+}
+
+small {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--texto-secundario);
+    font-size: 0.875rem;
+}
+
+button {
+    min-height: 46px;
+    padding: 0.8rem 1.25rem;
+    border: 0;
+    border-radius: 0.5rem;
+    color: var(--branco);
+    background-color: var(--verde);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+    background-color: #174f30;
+}
+
+button:disabled {
+    color: #334155;
+    background-color: #e2e8f0;
+    cursor: not-allowed;
+}
+
+#resultado:empty {
+    display: none;
+}
+
+#resultado:not(:empty) {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-left: 4px solid var(--verde);
+    border-radius: 0.4rem;
+    color: #174f30;
+    background-color: #edf7f0;
+}
+
+/* Rodapé */
+body > footer {
+    padding: 1.5rem 1rem;
+    color: var(--branco);
+    background-color: var(--azul-escuro);
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Adaptação para celulares */
+@media (max-width: 600px) {
+    body > header {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    nav a {
+        flex: 1;
+        padding-inline: 0.65rem;
+    }
+
+    main {
+        margin-block: 1rem;
+    }
+
+    fieldset {
+        padding: 1rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}
