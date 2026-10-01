@@ -108,9 +108,10 @@ nascimento.max = [
 formulario.addEventListener("submit", function (evento) {
     evento.preventDefault();
 
-    resultado.textContent =
-        "Os campos passaram pela validação do navegador. " +
-        "Nenhum dado foi enviado ou armazenado.";
+resultado.textContent =
+    "Os campos passaram pela validação do navegador. " +
+    "Apenas a opção de interesse é salva neste navegador; " +
+    "os demais dados não foram armazenados nem enviados.";
 });
 
 /* Remove a mensagem anterior ao alterar qualquer campo */
@@ -124,3 +125,71 @@ formulario.addEventListener("change", function () {
 
 /* Habilita o botão quando a configuração estiver concluída */
 botaoValidar.disabled = false;
+/* Persistência da preferência de participação */
+const campoInteresse = document.getElementById("interesse");
+const chavePreferencia = "conectaFuturo.preferencia.v1";
+
+const interessesPermitidos = [
+    "",
+    "primeiro-codigo",
+    "conecta-60",
+    "recomeco-digital",
+    "voluntariado"
+];
+
+/* Recupera a preferência quando o formulário é carregado */
+function restaurarPreferencia() {
+    try {
+        const textoSalvo = localStorage.getItem(chavePreferencia);
+
+        if (textoSalvo === null) {
+            return;
+        }
+
+        const preferencia = JSON.parse(textoSalvo);
+
+        if (
+            preferencia !== null &&
+            typeof preferencia === "object" &&
+            !Array.isArray(preferencia) &&
+            preferencia.versao === 1 &&
+            interessesPermitidos.includes(preferencia.interesse)
+        ) {
+            campoInteresse.value = preferencia.interesse;
+        } else {
+            localStorage.removeItem(chavePreferencia);
+        }
+    } catch (erro) {
+        console.warn("Não foi possível recuperar a preferência.", erro);
+    }
+}
+
+/* Salva uma nova escolha ou remove a preferência */
+campoInteresse.addEventListener("change", function () {
+    try {
+        const interesse = campoInteresse.value;
+
+        if (!interessesPermitidos.includes(interesse)) {
+            return;
+        }
+
+        if (interesse === "") {
+            localStorage.removeItem(chavePreferencia);
+            return;
+        }
+
+        const preferencia = {
+            versao: 1,
+            interesse: interesse
+        };
+
+        localStorage.setItem(
+            chavePreferencia,
+            JSON.stringify(preferencia)
+        );
+    } catch (erro) {
+        console.warn("Não foi possível salvar a preferência.", erro);
+    }
+});
+
+restaurarPreferencia();
