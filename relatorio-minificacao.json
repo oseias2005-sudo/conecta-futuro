@@ -1,0 +1,56 @@
+{
+  "unidade": "bytes",
+  "arquivos": [
+    {
+      "arquivo": "index.html",
+      "original": 358,
+      "minificado": 323,
+      "reducao": "9.78%"
+    },
+    {
+      "arquivo": "html\\cadastro.html",
+      "original": 9729,
+      "minificado": 5392,
+      "reducao": "44.58%"
+    },
+    {
+      "arquivo": "html\\index.html",
+      "original": 5092,
+      "minificado": 3450,
+      "reducao": "32.25%"
+    },
+    {
+      "arquivo": "html\\projetos.html",
+      "original": 6770,
+      "minificado": 5213,
+      "reducao": "23.00%"
+    },
+    {
+      "arquivo": "css\\style.css",
+      "original": 23177,
+      "minificado": 14616,
+      "reducao": "36.94%"
+    },
+    {
+      "arquivo": "js\\cadastro.js",
+      "original": 5676,
+      "minificado": 2992,
+      "reducao": "47.29%"
+    },
+    {
+      "arquivo": "js\\feedback.js",
+      "original": 382,
+      "minificado": 312,
+      "reducao": "18.32%"
+    },
+    {
+      "arquivo": "js\\menu.js",
+      "original": 2901,
+      "minificado": 1697,
+      "reducao": "41.50%"
+    }
+  ],
+  "originalTotal": 54085,
+  "minificadoTotal": 33995,
+  "reducaoPercentual": 37.15
+}

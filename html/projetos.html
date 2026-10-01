@@ -3,22 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-          content="Conheça os projetos de inclusão digital da ONG Conecta Futuro.">
+    <meta name="description" content="Conecta Futuro: inclusão digital e capacitação tecnológica. Página Projetos.">
     <title>Conecta Futuro | Projetos</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <header>
-        <p>Conecta Futuro</p>
-        <nav aria-label="Navegação principal">
-            <a href="index.html">Início</a>
-            <a href="projetos.html" aria-current="page">Projetos</a>
-            <a href="cadastro.html">Cadastro</a>
-        </nav>
-    </header>
+<header class="cabecalho">
+    <p>Conecta Futuro</p>
 
-    <main>
+    <button class="menu-toggle"
+            type="button"
+            aria-controls="menu-principal"
+            aria-expanded="false"
+            hidden>
+        <span aria-hidden="true">☰</span>
+        <span>Menu</span>
+    </button>
+
+    <nav id="menu-principal" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+
+        <details class="dropdown">
+            <summary>Projetos</summary>
+
+            <div class="submenu">
+                <a href="projetos.html">Todos os projetos</a>
+                <a href="projetos.html#primeiro-codigo">Primeiro Código</a>
+                <a href="projetos.html#conecta-60">Conecta 60+</a>
+                <a href="projetos.html#recomeco-digital">Recomeço Digital</a>
+            </div>
+        </details>
+
+        <a href="cadastro.html">Cadastro</a>
+    </nav>
+</header>
+<main>
         <h1>Nossos projetos</h1>
         <p>
             Desenvolvemos iniciativas gratuitas para ampliar o acesso
@@ -27,6 +46,10 @@
 
         <article aria-labelledby="primeiro-codigo">
             <h2 id="primeiro-codigo">Primeiro Código</h2>
+<div class="etiquetas" role="group" aria-label="Características do projeto">
+    <span class="badge badge--gratuito">Gratuito</span>
+    <span class="badge badge--categoria">Inclusão digital</span>
+</div>
             <p>
                 Projeto destinado a adolescentes interessados em conhecer
                 a programação e criar suas primeiras páginas para a web.
@@ -45,6 +68,10 @@
 
         <article aria-labelledby="conecta-60">
             <h2 id="conecta-60">Conecta 60+</h2>
+<div class="etiquetas" role="group" aria-label="Características do projeto">
+    <span class="badge badge--gratuito">Gratuito</span>
+    <span class="badge badge--categoria">Inclusão digital</span>
+</div>
             <p>
                 Projeto de inclusão digital para pessoas idosas,
                 com atividades práticas e acompanhamento no uso
@@ -64,6 +91,10 @@
 
         <article aria-labelledby="recomeco-digital">
             <h2 id="recomeco-digital">Recomeço Digital</h2>
+<div class="etiquetas" role="group" aria-label="Características do projeto">
+    <span class="badge badge--gratuito">Gratuito</span>
+    <span class="badge badge--categoria">Inclusão digital</span>
+</div>
             <p>
                 Projeto voltado a adultos que desejam desenvolver
                 habilidades digitais para o cotidiano e o mercado
@@ -91,10 +122,49 @@
                 <a href="cadastro.html">Quero ser voluntário</a>
             </p>
         </section>
-    </main>
+    <section aria-labelledby="orientacoes-participacao">
+    <h2 id="orientacoes-participacao">Antes de participar</h2>
 
-    <footer>
+    <div class="alerta alerta--info">
+        <span class="alerta__icone" aria-hidden="true">ⓘ</span>
+
+        <div>
+            <h3>Projeto acadêmico demonstrativo</h3>
+            <p>
+                O cadastro permite testar o preenchimento do formulário.
+    Utilize dados fictícios. Apenas sua opção de interesse será
+    salva neste navegador. Os demais campos não serão armazenados
+    e nenhum dado será enviado.
+            </p>
+        </div>
+    </div>
+
+    <button type="button"
+            id="abrir-modal"
+            aria-haspopup="dialog"
+            aria-controls="modal-participacao">
+        Como funciona a participação?
+    </button>
+</section>
+</main>
+<dialog id="modal-participacao" class="modal" aria-labelledby="titulo-modal" aria-describedby="descricao-modal">
+    <h2 id="titulo-modal">Participação na Conecta Futuro</h2>
+    <p id="descricao-modal">Neste projeto acadêmico, você pode explorar os projetos e testar o formulário de interesse.</p>
+    <ol>
+        <li>Conheça as iniciativas apresentadas na página Projetos.</li>
+        <li>Acesse a página Cadastro.</li>
+        <li>Preencha os campos com dados fictícios.</li>
+        <li>Teste as orientações e validações do formulário.</li>
+    </ol>
+    <p>O formulário é demonstrativo e não realiza uma inscrição real.</p>
+    <form method="dialog" class="modal__acoes">
+        <button type="submit" autofocus>Entendi, fechar</button>
+    </form>
+</dialog>
+<footer>
         <p>&copy; 2026 Conecta Futuro. Projeto acadêmico de ONG fictícia.</p>
     </footer>
+<script src="../js/menu.js"></script>
+<script src="../js/feedback.js"></script>
 </body>
 </html>

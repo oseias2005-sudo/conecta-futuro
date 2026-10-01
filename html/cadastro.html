@@ -3,26 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-          content="Formulário demonstrativo de participação nos projetos da ONG Conecta Futuro.">
+    <meta name="description" content="Conecta Futuro: inclusão digital e capacitação tecnológica. Página Cadastro.">
     <title>Conecta Futuro | Cadastro</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <header>
-        <p>Conecta Futuro</p>
-        <nav aria-label="Navegação principal">
-            <a href="index.html">Início</a>
-            <a href="projetos.html">Projetos</a>
-            <a href="cadastro.html" aria-current="page">Cadastro</a>
-        </nav>
-    </header>
+<header class="cabecalho">
+    <p>Conecta Futuro</p>
 
-    <main>
+    <button class="menu-toggle"
+            type="button"
+            aria-controls="menu-principal"
+            aria-expanded="false"
+            hidden>
+        <span aria-hidden="true">☰</span>
+        <span>Menu</span>
+    </button>
+
+    <nav id="menu-principal" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+
+        <details class="dropdown">
+            <summary>Projetos</summary>
+
+            <div class="submenu">
+                <a href="projetos.html">Todos os projetos</a>
+                <a href="projetos.html#primeiro-codigo">Primeiro Código</a>
+                <a href="projetos.html#conecta-60">Conecta 60+</a>
+                <a href="projetos.html#recomeco-digital">Recomeço Digital</a>
+            </div>
+        </details>
+
+        <a href="cadastro.html">Cadastro</a>
+    </nav>
+</header>
+<main>
         <h1>Cadastro de participação</h1>
         <p>
-            Demonstração acadêmica: utilize dados fictícios.
-            As informações não serão enviadas nem armazenadas.
+            Demonstração acadêmica: Utilize dados fictícios. Apenas sua opção de interesse será salva neste navegador. Os demais campos não serão armazenados e nenhum dado será enviado.
         </p>
         <p>Todos os campos são obrigatórios.</p>
 
@@ -217,10 +235,10 @@
         </noscript>
     </main>
 
-    <footer>
+<footer>
         <p>&copy; 2026 Conecta Futuro. Projeto acadêmico de ONG fictícia.</p>
     </footer>
-
-   <script src="../js/cadastro.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/cadastro.js"></script>
 </body>
 </html>
